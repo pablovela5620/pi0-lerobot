@@ -200,7 +200,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/readline-8.2-h8228510_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/referencing-0.36.2-pyh29332c3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/requests-2.32.3-pyhd8ed1ab_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/rerun-sdk-0.21.0-py311h5ef25c5_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/rerun-sdk-0.22.0-py311h67c213b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/rfc3339-validator-0.1.4-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/rfc3986-validator-0.1.1-pyh9f0ad1d_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/rpds-py-0.22.3-py311h9e33e62_0.conda
@@ -349,7 +349,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/8b/90eb44a40476fa0e71e05a0283947cfd74a5d36121a11d926ad6f3193cc4/opencv_python-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: git+https://github.com/physical-intelligence/openpi?rev=f543cb1d87ada91645b1484ca5dab6ac3749be8d#f543cb1d87ada91645b1484ca5dab6ac3749be8d
-      - pypi: git+https://github.com/physical-intelligence/openpi?subdirectory=packages%2Fopenpi-client#f00207b91c3880181ee5decf006a9d60f5a5f5ba
+      - pypi: git+https://github.com/physical-intelligence/openpi?subdirectory=packages%2Fopenpi-client#80d346ea0d64fd92f663c705b687bd5fc4bb96a0
       - pypi: https://files.pythonhosted.org/packages/23/cd/066e86230ae37ed0be70aae89aabf03ca8d9f39c8aea0dec8029455b5540/opt_einsum-3.4.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/5c/24/28d0bb21600a78e46754947333ec9a297044af884d360092eb8561575fe9/optax-0.2.4-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/00/06/90f972344350d12ed77b6cf28f8e06215eff9d8ca4da95679e8d0369d697/orbax_checkpoint-0.11.1-py3-none-any.whl
@@ -407,6 +407,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/65/f3/107a22063bf27bdccf2024833d3445f4eea42b2e598abfbd46f6a63b6cb0/typing_inspect-0.9.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/59/5f/bc97a3d058100dfd9fcc428d5332010e6bc26351a1c9d98a86f290608832/tyro-0.9.13-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/0f/dd/84f10e23edd882c6f968c21c2434fe67bd4a528967067515feca9e611e5e/tzdata-2025.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/39/3b/5b918a0da0d6920e7f7328cf0ab00df31b905d709f458596304f09096785/wadler_lindig-0.1.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/bc/89/2e414951d35e55caf6d8ac5758a82c61c1b8330f77852fbc733c833196eb/wandb-0.19.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/6b/a9/37531cb5b994f12a57dec3da2200ef7aadffef82d888a4c29a0d781568e4/websockets-14.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/52/24/ab44c871b0f07f491e5d2ad12c9bd7358e527510618cb1b803a88e986db1/werkzeug-3.1.3-py3-none-any.whl
@@ -4356,7 +4357,7 @@ packages:
   - treescope>=0.1.7
   - transformers==4.48.1
   requires_python: '>=3.11'
-- pypi: git+https://github.com/physical-intelligence/openpi?subdirectory=packages%2Fopenpi-client#f00207b91c3880181ee5decf006a9d60f5a5f5ba
+- pypi: git+https://github.com/physical-intelligence/openpi?subdirectory=packages%2Fopenpi-client#80d346ea0d64fd92f663c705b687bd5fc4bb96a0
   name: openpi-client
   version: 0.1.0
   requires_dist:
@@ -4636,9 +4637,11 @@ packages:
 - pypi: .
   name: pi0-aloha
   version: 0.1.0
-  sha256: 9d7f436e5d3d312108e2978ccfc596b6d73d61fb9d3660c4315f853554c33a5f
+  sha256: 460ac6a8be8bed1ad62bc7ed946525461654f3fac2fbd993e4a05143e5800bf3
   requires_dist:
   - tensordict>=0.7.0,<0.8
+  - rerun-sdk[notebook]
+  - wadler-lindig>=0.1.3,<0.2
   requires_python: '>=3.11'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/noarch/pickleshare-0.7.5-pyhd8ed1ab_1004.conda
@@ -5162,9 +5165,9 @@ packages:
   - requests>=2.0.0
   - oauthlib[signedtoken]>=3.0.0 ; extra == 'rsa'
   requires_python: '>=3.4'
-- conda: https://conda.anaconda.org/conda-forge/linux-64/rerun-sdk-0.21.0-py311h5ef25c5_0.conda
-  sha256: a475a9289fa56914d646c12c046b41574e258e7aabd2bbc2530bf2cd39eb760f
-  md5: fc069fd9bc57162ee369988e9d3b6d44
+- conda: https://conda.anaconda.org/conda-forge/linux-64/rerun-sdk-0.22.0-py311h67c213b_0.conda
+  sha256: 84778bb3182a31a88f4777b8e8e48cd27ca2b2c91fa625764fbab0a5c441fb83
+  md5: b7d80e092b68d141630b3755a745498e
   depends:
   - __glibc >=2.17,<3.0.a0
   - anywidget
@@ -5184,8 +5187,8 @@ packages:
   purls:
   - pkg:pypi/rerun-notebook?source=hash-mapping
   - pkg:pypi/rerun-sdk?source=hash-mapping
-  size: 41069697
-  timestamp: 1734635613467
+  size: 43699054
+  timestamp: 1738872149364
 - conda: https://conda.anaconda.org/conda-forge/noarch/rfc3339-validator-0.1.4-pyhd8ed1ab_1.conda
   sha256: 2e4372f600490a6e0b3bac60717278448e323cab1c0fecd5f43f7c56535a99c5
   md5: 36de09a8d3e5d5e6f4ee63af49e59706
@@ -7136,6 +7139,28 @@ packages:
   - pkg:pypi/urllib3?source=hash-mapping
   size: 100102
   timestamp: 1734859520452
+- pypi: https://files.pythonhosted.org/packages/39/3b/5b918a0da0d6920e7f7328cf0ab00df31b905d709f458596304f09096785/wadler_lindig-0.1.3-py3-none-any.whl
+  name: wadler-lindig
+  version: 0.1.3
+  sha256: 3018e4e6b115a7ef21c77414a41cbe7e03e83f6b5e25004958e33432a17f3c94
+  requires_dist:
+  - numpy ; extra == 'dev'
+  - pre-commit ; extra == 'dev'
+  - pytest ; extra == 'dev'
+  - jinja2==3.0.3 ; extra == 'docs'
+  - mkdocs-autorefs==1.0.1 ; extra == 'docs'
+  - mkdocs-include-exclude-files==0.0.1 ; extra == 'docs'
+  - mkdocs-material-extensions==1.3.1 ; extra == 'docs'
+  - mkdocs-material==7.3.6 ; extra == 'docs'
+  - mkdocs==1.3.0 ; extra == 'docs'
+  - mkdocstrings==0.17.0 ; extra == 'docs'
+  - mknotebooks==0.7.1 ; extra == 'docs'
+  - nbconvert==6.5.0 ; extra == 'docs'
+  - nbformat==5.4.0 ; extra == 'docs'
+  - pygments==2.14.0 ; extra == 'docs'
+  - pymdown-extensions==9.4 ; extra == 'docs'
+  - pytkdocs-tweaks==0.0.8 ; extra == 'docs'
+  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/bc/89/2e414951d35e55caf6d8ac5758a82c61c1b8330f77852fbc733c833196eb/wandb-0.19.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
   name: wandb
   version: 0.19.6

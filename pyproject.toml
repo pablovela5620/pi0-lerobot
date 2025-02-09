@@ -4,7 +4,11 @@ description = "Add a short description here"
 name = "pi0-aloha"
 requires-python = ">= 3.11"
 version = "0.1.0"
-dependencies = ["tensordict>=0.7.0,<0.8"]
+dependencies = [
+    "tensordict>=0.7.0,<0.8",
+    "rerun-sdk[notebook]",
+    "wadler-lindig>=0.1.3,<0.2",
+]
 
 [build-system]
 build-backend = "hatchling.build"
@@ -25,10 +29,11 @@ lerobot = { git = "https://github.com/huggingface/lerobot", rev = "638d411cd3acf
 
 
 [tool.pixi.tasks]
+notebook_tutorial = "jupyter lab notebooks"
 
 [tool.pixi.dependencies]
 python = "==3.11"
-rerun-sdk = ">=0.21.0,<0.22"
+rerun-sdk = ">=0.22.0"
 numpy = "<2"
 pytest = ">=8.3.4,<9"
 icecream = ">=2.1.4,<3"
