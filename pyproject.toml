@@ -25,7 +25,9 @@ scripts = [".pixi.sh"]
 pi0_aloha = { path = ".", editable = true }
 openpi = { git = "https://github.com/Physical-Intelligence/openpi.git", rev = "f543cb1d87ada91645b1484ca5dab6ac3749be8d" }
 openpi-client = { git = "https://github.com/Physical-Intelligence/openpi.git", subdirectory = "packages/openpi-client" }
-lerobot = { git = "https://github.com/huggingface/lerobot", rev = "638d411cd3acf32c28d8c2120f3c41bda8bb15d4" }
+lerobot = { git = "https://github.com/huggingface/lerobot", rev = "8548a87bd49c19bcda64cf0d6f205a378c1cebc3", extras = [
+    "pusht",
+] }
 
 
 [tool.pixi.tasks]
